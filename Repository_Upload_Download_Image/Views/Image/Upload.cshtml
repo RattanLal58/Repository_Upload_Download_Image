@@ -5,17 +5,17 @@
 @* <h1>@ViewData["Title"]</h1> *@
 <h2 class="text-primary text-center">Upload Image</h2>
 
+
 <form asp-action="Upload" method="post" enctype="multipart/form-data" id="crt">
-    <div class="form-group col-5">
-        <label for="file">Choose an image</label>
-        <input type="file" class="form-control" id="file" name="file" />
-    </div><br />
-    <button type="submit" class="btn btn-primary">Upload</button>
-    <a asp-action="Index" class="btn btn-info offset-3">Back to List</a>
+    <div asp-validation-summary="All"></div>
+    <div id="upld" class="container">
+        <div class="form-group col-5">
+            <label for="file">Choose an image</label>
+            <input type="file" class="form-control" id="file" name="file" />
+        </div><br />
+        <button type="submit" class="btn btn-outline-primary">Upload</button>
+        <span class="field-validation-valid text-danger" data-valmsg-replace="true" data-valmsg-for="file"></span>
+        <a asp-action="Index" class="btn btn-outline-primary offset-3">Back to List</a>
+    </div>   
 </form>
-@* <style>
-    #crt{
-        text-align:center;
-    }
-</style>
- *@
+
